@@ -1,0 +1,31 @@
+<h2>Training</h2>
+
+<ul class="treinador">
+  <li *ngFor="let training of  treinador"
+    [class.selected]="training === selectedTreinador"
+    (click)="onSelect(training)">
+    <span class="badge">{{training.id}}</span> {{training.nome}}
+    
+  </li>
+  <ul class = "poke" *ngIf="isHidden">
+    <li *ngFor= "let poke of selectedTreinador.pokemons">
+      <span>{{poke.id}}</span>{{poke.nome}}
+      
+         
+      
+      <button class="update" title="update"
+      (click)="save()">Editar</button>
+
+
+      <button class="delete" title="delete"
+      (click)="delete(selectedTreinador.id)">Delete</button>
+      
+      
+
+  </ul>
+
+  
+  
+</ul>  
+
+
